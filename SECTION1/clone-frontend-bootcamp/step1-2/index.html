@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- css파일 첨부하기 방법1: HTML <style> tag -->
+    <style>
+        h2 { color: blueviolet; font-style: italic;}
+    </style>
+
+    <!-- css파일 첨부하기 방법2: css 파일 추가하기 -->
+    <link rel="stylesheet" href="./index.css" />
+
+</head>
+<body>
+    <center>
+        <h1> This is my <span>Title</span></h1>
+    </center>
+    
+    <div class="titles">
+        <!-- css파일 첨부하기 방법3: HTML tag에 style attribute 주기 -->
+        <div class="important-links" style="text-align: center; width: 30%;">
+            <h2> important Links</h2>
+            <ul>
+                <li><a target="_blank" href="https://github.com/dev-hjJoo">hyoz's github is awesome!</a></li>
+                <li><a target="_blink" href="https://github.com/dev-hjJoo/frontend-bootcamp">Learn More!</a></li>
+                <li><a target="_blink" href="https://careers.kakao.com/index">Hire me...</a></li>
+            </ul>
+        </div>
+        <div style="width: 30%; text-align: center; background-color:white; margin-top: 0.5%; ">
+            <h2> Our LOGO</h2>
+            <img src="../img/skein.png" width=30%>
+        </div>
+        <div style="width:30%; text-align: right; padding-right: 50%; ">
+            <h2> Contact Us </h2>
+            <div id="contact-form">
+                <label for="submit-email" class="label-email"> e-mail: </label>
+                <input type="email" id="submit-email" placeholder="이메일을 입력해주세요."/>
+                <input value="Submit" type="submit"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

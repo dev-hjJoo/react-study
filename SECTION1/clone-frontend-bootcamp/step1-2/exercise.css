@@ -1,0 +1,31 @@
+h2 {
+    color: red;
+}
+
+h2 + div {
+    background-color: green;
+}
+
+.myList {
+    border-bottom-style: solid;
+    border-color: black;
+}
+
+div.myClass {
+    background-color: green;
+}
+
+/* 클래스 선택자가 두 개 일 때 */
+div.myClass.otherClass {
+    background-color: yellowgreen;
+    color: white;
+}
+
+/* id로 가져올 때 */
+#myId {
+    background-color: yellow;
+}
+
+div:last-child {
+    border: 1px solid pink;
+}

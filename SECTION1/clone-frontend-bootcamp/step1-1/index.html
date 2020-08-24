@@ -1,0 +1,210 @@
+<html >
+    <head>
+      <title>Intro to HTML</title>
+      <link rel="stylesheet" href="./style.css" />
+      
+      <style>
+        hr {
+          margin: 40px;
+        }
+      </style>
+    </head>
+  </html>
+
+<body>
+    <center>
+    <header>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+
+      <nav>The HTML &lt;nav&gt; element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.</nav>
+    </header>
+
+    <main>
+        <article></article>
+        <aside></aside>
+        <hr>
+        <section>
+            <h3>Div</h3>
+            <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo et quod odio velit, hic qui autem dolores magni earum ducimus dolorem modi, numquam laborum accusamus adipisci eius excepturi doloremque vero. </div>
+            <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore voluptatum maiores vitae? Architecto amet provident labore error officia accusantium reiciendis, vero perspiciatis. Incidunt numquam enim deserunt, velit earum totam veritatis. </div>
+            <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nobis ex optio, minus in, eum ratione magnam aut distinctio, aliquid libero eaque nihil provident nemo est adipisci repellendus nisi numquam? </div>
+      
+            <h3>Paragraph(p)</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, vero! Eum optio veniam nisi, assumenda ea velit in corrupti vel eos reprehenderit beatae libero rem iusto, maiores, corporis sunt laborum.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis porro consequuntur exercitationem, perspiciatis nam saepe, odit enim omnis qui commodi cupiditate in eveniet. Nemo maxime ipsam recusandae consectetur voluptatum non?</p>
+    </center>
+            <h3>Ordered List(ol)</h3>
+            <ol>
+                <li>Ordered</li>
+                <li>list</li>
+                <li>items</li>
+            </ol>
+
+            <h3>Unordered List(ul)</h3>
+            <ul>
+                <li>Unordered</li>
+                <li>list</li>
+                <li>items</li>
+            </ul>
+
+            <h3>pre</h3>
+            <pre>
+                // This is a pre tag            --           It respects spacing and tabs
+        
+                <ul>
+                    <li>Unordered</li>
+                    <li>list</li>
+                    <li>items</li>
+                </ul>
+      
+                // But actual code still needs to be escaped
+        
+                &lt;ul&gt;
+                    &lt;li&gt;Unordered&lt;/li&gt;
+                    &lt;li&gt;list&lt;/li&gt;
+                    &lt;li&gt;items&lt;/li&gt;
+                &lt;/ul&gt;
+            </pre>
+        </section>
+        <hr>
+        <section>
+        
+            <h2>
+                <!-- target="_blank": 새 윈도우 창을 열어서 웹 페이지 열기, 기존의 창 그대로 남겨져 있음. -->
+                <!-- target="_self": 현재 윈도우창에 그대로 링크된 웹페이지를 열기(현재 프레임) -->
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Inline_text_semantics">
+                    Inline text elements
+                </a>
+            </h2>
+                <a target="_blank" href="https://github.com/dev-hjJoo">
+                    "Anchor Tag with"
+                    <span style="color: violet"> span tag wrapped around part of it </span>
+                </a>
+                <h3> Inline style tags</h3>
+                <ul>
+                    <li><b> b tag </b></li>
+                    <li><em> em tag</em> &nbsp;</li>
+                    <li><i> i tag</i> &nbsp;</li>
+                    <li><sub> sub tag </sub> &nbsp;</li>
+                    <li><code> code tag </code> </li>
+                </ul>
+
+                <h3> image tag </h3>
+                <div>
+                    <!-- alt는 이미지에 대한 설명! -->
+                    <img src="../img/cat.png" alt="cat logo" width=100>
+                    <img src="../img/cat.png" alt="cat logo" width=50>
+                    <img src="../img/cat.png" alt="cat logo" width=150>
+                </div>
+        </section>
+        <hr>
+        <section>
+            <h2> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Table_content"> Table Content</a></h2>
+            <table border="10" width=50%>
+                <thead>
+                    <tr bgcolor="hotpink" >
+                        <th>Column 1 header</th>
+                        <th>Column 2 header</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <td> The table body </td>
+                        <td> with two columns</td>
+                    </tr>
+                    <tr>
+                        <td> Another table row</td>
+                        <td> with two columns</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2"> Row spanning both columns </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2> <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Forms"> Forms </a> </h2>
+            <!-- get/post 방식 알고 있지? -->
+            <form action method="get" class="form-example">
+
+                <h3> - text input box </h3>
+                <div> 
+                    <!-- label의 for 속성 값과 양식의 id 값이 같으면 연결됩니다. -->
+                    <label for="name">Enter your name: </label>
+                    <!-- requred attribute: must be filled out before submitting the form! -->
+                    <input type="text" name="name" id="name" required>
+                </div>
+
+                <h3> - checkvox type input box </h3>
+                <div>
+                    <div>
+                        <!-- checked attribution: 디폴트로 체크 되어있음! -->
+                        <input type="checkbox" id="option1" name="option1" checked>
+                        <label for="option1"> Option1 </label>
+                    </div>
+                    <div>
+                            <input type="checkbox" id="option2" name="option2">
+                            <label for="option2"> Option2 </label>
+                    </div>
+                </div>
+                <h3> - color type input box</h3>
+                <div>
+                    <input type="color" id="color1" name="color1" value="#fab1a0">
+                    <label for="color1"> Color 1 </label>
+                </div>
+                <div>
+                    <input type="color" id="color2" name="color2" value="#a29bfe"
+                    <label for="color2"> Color 2 </label>
+                </div>
+                
+                <h3> - date type input box</h3>
+                <div>
+                    <input type="date" id="start" name="trip-start" value="2020-08-24" min="2020-01-01" max="2021-12-31">
+                </div>
+
+                <h3> - radio type input box </h3>
+                <div>
+                    <div>
+                        <input type="radio" id="Radio1" name="radios" value="Radio1" checked>
+                        <label for="Radio1"> Radio 1 </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="Radio2" name="radios" value="radio2">
+                        <label for="radio2"> Radio 2 </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="Radio3" name="radios" value="radio3">
+                        <label for="radio3"> Radio3 </label>
+                    </div>
+                </div>
+
+                <h3> - select box </h3>
+                <div>
+                    <label for="pet-select"> Choose a pet: </label>
+                    <select id="pet-select">
+                        <option value> --Please choose an option--</option>
+                        <option value="dog"> Dog </option>
+                        <option value="cat"> Cat </option>
+                        <option value="hamster"> Hamster </option>
+                        <option value="parrot"> Parrot </option>
+                        <option value="spider"> Spider </option>
+                        <option value="goldfish"> Goldfish </option>
+                    </select>
+                </div>
+
+                <h3> - submit type input box </h3>
+                <div>
+                    <input type="submit" value="Subscribe!">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer></footer>
+  </body>
