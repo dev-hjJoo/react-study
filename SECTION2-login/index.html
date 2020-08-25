@@ -6,9 +6,49 @@
     <title>Document</title>
 </head>
 <body>
+
+
+    <script src="//your-cdn-path/kakao.min.js"></script>
+    <!-- or
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    -->
+    <script type="text/javascript">
+    Kakao.init('53c44c1bc6a010df65e21885e8021cfc'); // js key (REST Key 써야하나?)
+    Kakao.Link.createTalkLinkButton({
+    container: '#YOUR_LINK',
+    label: 'YOUR CUSTOM LABEL/CAPTION',
+    image: {  // optional
+        src: 'YOUR IMAGE URI',
+        width: YOUR_IMG_WIDTH,
+        height: YOUR_IMG_HEIGHT
+    },
+    webButton: {
+        text: 'LINK TEXT IN KAKAOTALK',
+        url: 'SHARED LINK URL')
+    }
+    });
+</script>
+
+
+    <a id="create-kakao-login-btn"></a>
+
+    <script type="text/javascript">
+        Kakao.Auth.createLoginButton({
+            container: '#create-kakao-login-btn',
+            success: function(authObj) {
+                alert(JSON.stringify(authObj))
+            },
+            fail: function(err) {
+                alert(JSON.stringify(err))
+            },
+        })
+    </script>
+
+    <!--
     <ul className="button sns">
         <li className="kakao"><Link to="/login/kakao"><b>카카오 계정으로 시작하기</b></Link></li>
         <li className="google"><Link to="/login/google"><b>구글 계정으로 시작하기</b></Link></li>
-    </ul>
+    </ul>*/
+    -->
 </body>
 </html>
