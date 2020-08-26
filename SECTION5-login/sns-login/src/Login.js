@@ -1,0 +1,1 @@
+import KaKaoLogin from 'react-kakao-login';
