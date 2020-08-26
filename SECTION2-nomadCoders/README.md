@@ -1,6 +1,7 @@
 # Nomad Coders: 영화 웹 서비스 만들기 (movie_app)
 > React JS Fundamentals Course (updated in 2019)
 ## REACT 환경 시작하기
+> 공통 정보
 ### 🚩 React application 생성 명령어
 * ✨npx create-react-app (생성할 폴더 이름)✨
 
@@ -21,9 +22,10 @@
 
 ### 🚩 드디어 나온다! JSX!
 * <b>J</b>ava<b>S</b>cript <b>X</b>ML
-* JavaScript와 HTML 사이으이 이러한 조합!
+* JavaScript와 HTML 사이의 이러한 조합!
 * react에서 등장한 소개한 유일한 개념, react에 특화된 개념!
-
+- - -
+> prev-App.js 파일과 함께 보면 보다 더 쉽게 확인 가능
 ### 🚩 컴포넌트에 대한 정보1
 * ReactDOM.render() 내부에 <b>하나의 컴포넌트만</b> 가능!
 * 예시 (불가능, 컴포넌트가 2개)
@@ -43,9 +45,116 @@
     ❕ 즉, <b>attribute는 html 문서 내 정적인 속성</b>을 의미하고 <b>property는 동적인 속성</b>을 의미함.
   </pre>
 
-### 🚩 배열을 가져오자! <b>map!</b>
+### 🚩 배열을 가져오자! <b>map!</b>과 함수 형태
 * map은 array의 각 item에서 function을 실행하는 JavaScript function
 * 그 function의 result를 갖는 array를 반환
+ <pre>
+friends.map(current => {
+    console.log(current);
+    return 0;
+})
+</pre>
+에서 current를 매개변수로 하는 함수가 map 함수 내부에 작성되어있음을 알 수 있다.
+<pre>
+* current => { }
+와 동일한 형식
+* function(current) {}
+</pre>
+* 예를 들어 모든 인자에 하트(💕)를 붙이고 싶다면?
+<pre>
+friends.map(current => {
+    current = current + "💕";
+    console.log(current);
+    return current;
+});
+</pre>
+> 실행 결과
+<pre>
+dal💕
+mark💕
+lynn💕
+china guy💕
+(4) ["dal💕", "mark💕", "lynn💕", "china guy💕"]
+</pre>
+
+### 🚩 이미지에 부여하는 <b>alt</b> property
+* 시각 장애인들을 위한 데이터
+* 각각의 이미지를 구분하기 위한 정보를 제공
+
+### 🚩 nodeJS의 prop-types
+> 설치 방법 <b>npm i prop-types</b>
+* 역할: 내가 전달받은 props가 내가 원하는 props인지 확인
+* 자료형을 확인할 뿐만 아니라, 전달받아야 하는데 오지 않았다던지 하는 등의 확인 절차도 수행.
+* 자료형도 string, number 뿐만 아니라 array, boolean, object 등 모두 체크 가능
+* 또한 isRequired를 호출하는 방식으로 type과 required 모두 체크할 수도 있음.
+* PropType을 설정할 때, 이름은 무조건 propTypes라고 지어야 함. (sexyTypes라고 지으면 안 돼)
+  * 왜냐하면 그렇지 않을 경우 react가 확인을 하지 않음.
+
+- - -
+> app.js 파일과 함께 보면 이해가 쉬움
+### 🚩 <b>state</b>? dynamic data!
+* 보통 동적 데이터와 함께 작업할 때 만들어지는 데이터.
+* 변하지만 존재하지 않는 데이터!
+* 생겨나고 사라지고 변경되는 데이터. 하나인 데이터가 두 개가 되고 또 0이 되는 그런 종류의 것들!
+* React.Component 내부에 들어 있음
+* state는 object이고 component의 data를 넣을 공간이 있음. 그리고 이 데이터는 변함.
+
+### 🚩<b>function</b> component VS <b>class</b> component
+* class Component는 return을 가지지 않아. 왜냐? function이 아니기 때문!
+* 대신 render라는 메소드를 가지고 있음.
+<pre>
+// function component
+function App() {
+  return (
+    &ltdiv>
+      ...
+    &lt/div>
+  );
+}
+</pre>
+* Function component는 function이고, 무언가를 return함. 그리고 그것을 screen에 띄움.
+<pre>
+// class component
+class App extends React.component {
+  render() {
+    return (
+      &ltdiv>
+      &lt/div>
+    )
+  }
+}
+</pre>
+* Class component는 class, react component로 부터 확장되고 render메소드를 통해 반환하여 screen에 표시함.
+* 🥁Class Component를 알아야 하는 이유?🥁
+  * Class component가 바로 <b>state</b>를 가지고 있기 때문 ! ! ! ! ! ! !
+
+### 🚩 state 변경 시에는 set을 사용하자!
+> 사용법: this.setState(변경할 값 코드);
+* 우리가 setState function을 호출하면 react는 매우 똑똑!
+* 언제 호출할 지를 알고, 언제 view를 refresh 하고 싶은 지 알고, render function을 refresh 하고 싶은 지 안다!
+* 그리고 react는 변화가 있는 부분만 refresh!
+<pre>
+ 🥁<b>매 순간 setState를 호출할 때 마다 react는 새로운 state와 함께 render function을 호출!</b>🥁
+</pre>
+
+### 🚩 외부의 상태에 의존하지 않는 방법? current 변수로 this.state 불러오기!
+> 그런데 말야 this.state.count와 같이 접근하는 거 넘 우 별로지 않니?
+* 그런 당신이라면! 아래 코드를 참고 ! ! ! !
+<pre>
+this.setState({count: this.state.count+1})
+</pre>
+* 위 코드 대신
+<pre>
+this.setState(current => ({count: current.count+1}) );
+</pre>
+* 이 코드를 사용하자! 외부의 상태에 의존하지 않는 가장 좋은 방법!
+* 참고로 변수 이름은 무관해!
+
+### 🚩 Mounting
+
+
+
+
 - - -
 ### 🙋 좀 더 알아보기
 * [React.strict-mode](https://ko.reactjs.org/docs/strict-mode.html) 
@@ -59,3 +168,9 @@
   * import는 nodeJS 문법이야!! 최신 문법으로 ES6부터 반영되었지..
 * 그런데 <b>component란?</b>
   * <u>HTML을 반환하는 함수!!!!! </u> 😲😲😲
+
+### 🌈 가졌던 의문 해결2
+> <font color="#e74c3c"> Warning: Each child in a list should have a unique "key" prop. </font> 라는 메세지가 뜬다면?
+* 유일성을 잃어버린 경우로, list 내 각각의 child는 unique한 key prop을 가져야 함.
+* 따라서 각각 기능상 사용되지 않는 key로서만 작동할 값(예: id)을 생성.
+* 이는 기본적으로 react 내부적으로 사용하기 위한 값
