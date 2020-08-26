@@ -25,7 +25,7 @@
 * JavaScript와 HTML 사이의 이러한 조합!
 * react에서 등장한 소개한 유일한 개념, react에 특화된 개념!
 - - -
-> prev-App.js 파일과 함께 보면 보다 더 쉽게 확인 가능
+> first-App.js 파일과 함께 보면 보다 더 쉽게 확인 가능
 ### 🚩 컴포넌트에 대한 정보1
 * ReactDOM.render() 내부에 <b>하나의 컴포넌트만</b> 가능!
 * 예시 (불가능, 컴포넌트가 2개)
@@ -91,7 +91,7 @@ china guy💕
   * 왜냐하면 그렇지 않을 경우 react가 확인을 하지 않음.
 
 - - -
-> app.js 파일과 함께 보면 이해가 쉬움
+> second-App.js 파일과 함께 보면 이해가 쉬움
 ### 🚩 <b>state</b>? dynamic data!
 * 보통 동적 데이터와 함께 작업할 때 만들어지는 데이터.
 * 변하지만 존재하지 않는 데이터!
@@ -151,6 +151,52 @@ this.setState(current => ({count: current.count+1}) );
 * 참고로 변수 이름은 무관해!
 
 ### 🚩 Mounting
+<pre> component life cycle
+ * <b>Mounting</b>: 태어나는 것과 같음
+ * Updating: 일반적인 업데이팅
+ * UnMounting: component가 죽는 것을 의미 => 페이지를 바꿀 때!
+</pre>
+> <b>마운트(mount)</b>란? 컴퓨터 과학에서 저장 장치에 접근할 수 있는 경로를 디렉터리 구조에 편입시키는 작업
+ * constructor()
+   * JavaScript 문법으로, render()보다 먼저 실행됨! 1번 작업!
+   * Component가 mount될 때, component가 screen에 표시될 때 constructor을 호출
+ * getDerivedStateFromProps()
+   * 해당 영상에서 범위를 벗어나므로 다루지 않음
+ * render()
+   * 1번 작업 수행 후 render!
+   * 변경될 때 마다 호출되네? 그건 업데이트!
+ * componentDidMount()
+   * render 할 때 "이봐 이 component는 처음 render됐어!"를 알려주는 친구
+
+### 🚩 Updating
+> 업데이트의 원인은 바로 너! 변화를 줘서 state를 변경하는 것, 그것이 update!
+* getDerivedStateFromProps()
+  * 업데이트 시 호출, 해당 강의에서 이야기 하지 않음.
+* shouldComponentUpdate()
+  * 기본적으로 업데이트 할 지 말지 결정하는 것, 얘도 해당 강의에서 이야기 하지 않음.
+* render (위에서 설명했지?)
+* componentDidUpdate()
+  * 변경될 때 마다 render 호출된 이후 업데이트가 완료되면 해당 함수 호출!
+
+### 🚩 Unmount
+> 이건... compoonent가 죽을 때.....
+* componentWillUnmount()
+  * component의 마지막 순간, 다른 페이지로 가는 등의 컴포넌트가 없어질 때 호출.
+
+- - -
+> App.js, Movie.js와 함께 보면 좋음.
+> 해당 부분은 앱을 만들면서 설명하는 부분이 많아 주석으로 많이 설명하겠음.
+### 🚩 fetch와 axios
+* axios는 fetch 위에 있는 작은 layer라고 보면 돼!
+
+### 🚩 Component를 예쁘게 꾸미고 싶다면? <b>style component</b>!
+<pre> <b>태그 내 css 옵션 넣기</b>
+* 사용 방법: 태그 내에서 style={{ -- }}
+* 주의: 중괄호 2개!!! 
+</pre>>
+<pre> <b> css파일 만들기 </b>
+
+</pre>
 
 
 

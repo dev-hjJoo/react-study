@@ -1,0 +1,19 @@
+body {
+    background-color: darkolivegreen;
+}
+
+.movie {
+    width: 500px;
+    background-color: whitesmoke;
+    padding: 10px;
+    margin: 10px
+}
+
+.movie__title {
+    text-align: center;
+}
+
+.movie__summary{
+    text-align: center;
+}
+
