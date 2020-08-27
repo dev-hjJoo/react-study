@@ -14,6 +14,12 @@
 ### Microsoft/ <b>frontend-bootcamp</b>
 ## SECTION2
 ### Nomad Coders: how to make <b>movies-app using ReactJS</b>
+<pre> <b>- 목표 -</b>
+1. README 파일 정리 잘 해서 두고두고 보기
+2. react 개념 틀 잡기
+3. 공식문서 보고 공부하는 습관 들이기
+</pre>
 - - -
 ## SECTION5
-### make log-in
+### Make SNS Log-in
+> kakao login과 google login을 만들어보자!

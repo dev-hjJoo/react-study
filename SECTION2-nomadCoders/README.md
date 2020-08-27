@@ -193,9 +193,9 @@ this.setState(current => ({count: current.count+1}) );
 <pre> <b>태그 내 css 옵션 넣기</b>
 * 사용 방법: 태그 내에서 style={{ -- }}
 * 주의: 중괄호 2개!!! 
-</pre>>
+</pre>
 <pre> <b> css파일 만들기 </b>
-
+* 동일한 파일 이름으로 CSS 파일을 생성해서 CSS 파일 편집
 </pre>
 
 
