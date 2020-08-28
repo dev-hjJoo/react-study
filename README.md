@@ -23,3 +23,5 @@
 ## SECTION5
 ### Make SNS Log-in
 > kakao login과 google login을 만들어보자!
+* [Kakao Developers](https://developers.kakao.com/tool/demo/login/login)
+* [npmJS: react-google-login](https://www.npmjs.com/package/react-google-login) 
