@@ -1,10 +1,11 @@
 import React from 'react';
+import KakaoBtn from './KakaoBtn';
 
 
 function App() {
+
   return (
-    <div className="App">
-    </div>
+    <KakaoBtn> </KakaoBtn>
   );
 }
 
